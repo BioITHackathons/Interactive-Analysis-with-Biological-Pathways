@@ -10,6 +10,13 @@ The autopath project explores biological pathways for autoimmune diseases. Our c
 # Workflow
 ![General Workflow](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/blob/main/img/workflow_authopath.jpg)
 
+- **Docker**:
+Make sure Docker is installed and actively running in the background.
+Verify Docker installation and status using:
+  ```bash
+  docker --version
+  ```
+
 ##  Team Members
 - [Eric Weitz](https://github.com/eweitz): The Broad Institute
 - Anne  Deslattes Mays: Founder, Scitechcon LLC
