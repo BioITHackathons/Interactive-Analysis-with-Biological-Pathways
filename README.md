@@ -10,9 +10,9 @@
 
 ##  Team Members
 - [Eric Weitz](https://github.com/eweitz): The Broad Institute
-- Anne  Deslattes Mays, Founder, Scitechcon LLC
-- Lei Ma, Harvard FAS Informatics Group
+- Anne  Deslattes Mays: Founder, Scitechcon LLC
+- Lei Ma: Harvard FAS Informatics Group
 - [Olaitan I. Awe](https://github.com/laitanawe): Independent Bioinformatics Consultant.
-- Peter Fan, North Eastern
-- Allie Cliffe, The Broad Institute
+- Peter Fan: North Eastern
+- Allie Cliffe: The Broad Institute
 
