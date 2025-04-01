@@ -5,4 +5,4 @@
 
 
 # Workflow
-![General Workflow](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/tree/main/img)  
+![General Workflow]([https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/tree/main/img](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/tree/main/img))  
