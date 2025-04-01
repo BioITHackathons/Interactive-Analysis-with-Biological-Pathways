@@ -1,5 +1,5 @@
 # Interactive-Analysis-with-Biological-Pathways
-This project explores biological pathways for autoimmune diseases. Our case study is Systemic Lupus Erythematosus (SLE) which is a chronic autoimmune disease where the immune system mistakenly attacks healthy tissues and organs, leading to inflammation and damage. 
+The autopath project explores biological pathways for autoimmune diseases. Our case study is Systemic Lupus Erythematosus (SLE) which is a chronic autoimmune disease where the immune system mistakenly attacks healthy tissues and organs, leading to inflammation and damage. 
 
 # Project Objectives
 
