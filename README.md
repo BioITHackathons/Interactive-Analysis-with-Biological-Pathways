@@ -22,6 +22,6 @@ Verify Docker installation and status using:
 - Anne  Deslattes Mays: Founder, Scitechcon LLC
 - Lei Ma: Harvard FAS Informatics Group
 - [Olaitan I. Awe](https://github.com/laitanawe): Independent Bioinformatics Consultant.
-- Peter Fan: North Eastern
+- Peter Fan: Northeastern University Library
 - Allie Cliffe: The Broad Institute
 
