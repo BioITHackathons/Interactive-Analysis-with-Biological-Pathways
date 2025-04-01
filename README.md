@@ -4,7 +4,7 @@
 # Project Objectives
 
 ### Usage Gudelines
-[https://github.com/omicscodeathon/prostruct/](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/)
+[https://github.com/omicscodeathon/Interactive-Analysis-with-Biological-Pathways/](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/)
 
 
 # Workflow
