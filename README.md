@@ -3,10 +3,12 @@
 
 # Project Objectives
 
+### Usage Gudelines
+[https://github.com/omicscodeathon/prostruct/](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/)
+
 
 # Workflow
-
-[General Workflow](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/blob/main/img/workflow_authopath.jpg)
+![General Workflow](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/blob/main/img/workflow_authopath.jpg)
 
 ##  Team Members
 - [Eric Weitz](https://github.com/eweitz): The Broad Institute
