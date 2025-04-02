@@ -133,15 +133,20 @@
         let pathwayId = urlParams.pathway
         const genesObj = {}
 
-
         if (!pathwayId) {
           pathwayId = 'WP5533'
           genesObj['RLBP1'] = {}
         } else {
           document.querySelector('#onboarding').remove()
           if (urlParams.genes) {
-            const genes = urlParams.genes.split(';').map(geneName => {
-              genesObj[geneName] = {}
+            const genes = urlParams.genes.split(';').map(gene => {
+              if (gene.split(',').length > 1) {
+                const [name, log2fc, adjustedPvalue] = gene.split(',')
+                genesObj[name] = {log2fc, adjustedPvalue}
+              } else {
+                const name = gene
+                genesObj[name] = {}
+              }
             })
           }
         }
@@ -150,14 +155,11 @@
           colorPathwayGenesByMetric(genesObj)
         })
 
-        document.addEventListener('ideogramDrawPathway', () => {
-          colorPathwayGenesByMetric({'RLBP1': {foo: 1, bar: 2}})
-        })
-
         Ideogram.drawPathway(pathwayId, '#pathway-diagram')
       }
 
       console.log('Ideogram', Ideogram)
+
       initPathway()
     </script>
   </body>
