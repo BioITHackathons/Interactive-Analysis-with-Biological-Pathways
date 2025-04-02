@@ -1,13 +1,17 @@
 <html>
   <head>
+    <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy.umd.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ideogram@1.51.0/dist/js/ideogram.min.js"></script>
   </head>
   <body>
-    <div id="_ideogramOuterWrap"></div>
-    <div id="pathway-diagram"></div>
     <div id="onboarding">
       This prototype typically uses a "pathway" URL parameter.  Below is a default pathway!
+      <br/><br/><br/>
     </div>
+    <div id="pathway-overview"></div>
+    <div id="_ideogramOuterWrap"></div>
+    <div id="pathway-diagram"></div>
     <script>
       function getURLParams() {
           let params = {};
@@ -33,15 +37,12 @@
         const styleRulesets = []
         const unassayedGenes = []
 
-        console.log('metricsByGene', metricsByGene)
+        // console.log('metricsByGene', metricsByGene)
 
         genes.forEach(geneObj => {
           const domId = geneObj.domId
           const gene = geneObj.name
-          console.log('gene', gene)
           const metrics = metricsByGene[gene]
-
-          console.log('metrics', metrics)
 
           if (!metrics) {
             unassayedGenes.push(gene)
@@ -50,11 +51,11 @@
 
 
           const baseSelector = `#_ideogramPathwayContainer .DataNode#${domId}`
-          // const rect = document.querySelector(`${baseSelector} rect`)
-          // if (!rect) {
-          //   // Can happen when resizing and pathway DOM nodes are transiently unavailable
-          //   return
-          // }
+          const rect = document.querySelector(`${baseSelector} rect`)
+          if (!rect) {
+            // Can happen when resizing and pathway DOM nodes are transiently unavailable
+            return
+          }
 
           // const percent = metrics
 
@@ -80,7 +81,7 @@
 
           // In future work, consider showing these values on node hover.
           // For now they help engineers inspect nodes to confirm mean and percent.
-          // rect.setAttribute('data-expression-scaled-mean', metrics.mean)
+          rect.setAttribute('data-expression-pvalue', metrics.pValue)
           // rect.setAttribute('data-expression-percent', percent)
 
           styleRulesets.push(rulesets)
@@ -141,16 +142,25 @@
           if (urlParams.genes) {
             const genes = urlParams.genes.split(';').map(gene => {
               if (gene.split(',').length > 1) {
-                const [name, log2fc, adjustedPvalue] = gene.split(',')
-                genesObj[name] = {log2fc, adjustedPvalue}
+                const [name, pValue] = gene.split(',')
+                genesObj[name] = {pValue}
               } else {
                 const name = gene
                 genesObj[name] = {}
               }
             })
+            const rawGeneNames = Array.from(Object.keys(genesObj))
+            let geneNames = rawGeneNames.slice(0, -1).join(', ')
+            if (rawGeneNames.length > 1) {
+              geneNames += ' and ' + rawGeneNames.slice(-1)[0]
+            }
+            const overview = 'Showing genes ' + geneNames + ' for pathway ' + pathwayId
+            document.querySelector('#pathway-overview').innerHTML =
+              '<div>' + overview + '</div><br/><br/><br/>'
           }
         }
 
+        console.log('genesObj', genesObj)
         document.addEventListener('ideogramDrawPathway', () => {
           colorPathwayGenesByMetric(genesObj)
         })
