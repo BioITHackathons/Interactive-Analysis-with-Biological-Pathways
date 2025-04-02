@@ -5,10 +5,134 @@
   <body>
     <div id="_ideogramOuterWrap"></div>
     <div id="pathway-diagram"></div>
+    <div id="onboarding">
+      This prototype needs a "pathway" URL parameter.  Don't have one?  <a href="?pathway=WP5533">Click to load a default</a>!
+    </div>
     <script>
-      console.log('Ideogram', Ideogram)
+      function getURLParams() {
+          let params = {};
+          let queryString = window.location.search;  // Get the URL query string (e.g., "?name=John&age=25")
 
-      Ideogram.drawPathway('WP5533', '#pathway-diagram')
+          if (queryString) {
+              queryString.substring(1).split("&").forEach(param => {
+                  let [key, value] = param.split("=");
+                  params[decodeURIComponent(key)] = decodeURIComponent(value || "");
+              });
+          }
+
+          return params;
+      }
+
+      /**
+       * Color each gene red/purple/blue by mean expression, and
+       * set each gene's contrast by percent of cells expression
+       */
+      function colorPathwayGenesByMetric(metricsByGene) {
+        const genes = getPathwayGenes()
+
+        const styleRulesets = []
+        const unassayedGenes = []
+
+        genes.forEach(geneObj => {
+          const domId = geneObj.domId
+          const gene = geneObj.name
+          const metrics = metricsByGene[gene]
+
+          if (!metrics) {
+            unassayedGenes.push(gene)
+            return
+          }
+
+          const baseSelector = `#_ideogramPathwayContainer .DataNode#${domId}`
+          const rect = document.querySelector(`${baseSelector} rect`)
+          if (!rect) {
+            // Can happen when resizing and pathway DOM nodes are transiently unavailable
+            return
+          }
+
+          const percent = metrics.percent
+
+          // Higher `colorPercent`, higher contrast.  Lowering visual prominence by
+          // decreasing contrast in these pathway nodes is analogous to how dot
+          // plots lower visual prominence by decreasing size in circle nodes.
+          // Adjusting node size in pathways isn't feasible because the nodes also
+          // contain shown labels, and pathway graphics layout is sensitive to
+          // node size.
+          const colorPercent = Math.min(percent < 75 ? percent : percent + 25, 100)
+
+          const textColor = percent < 50 ? 'black' : 'white'
+
+          // Docs: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
+          const rectColor = `color-mix(in oklab, ${metrics.color} ${colorPercent}%, white)`
+
+          const rectRuleset = `${baseSelector} rect {fill: ${rectColor};}`
+          const textRuleset = `${baseSelector} text {fill: ${textColor};}`
+          const rulesets = `${rectRuleset} ${textRuleset}`
+
+          // In future work, consider showing these values on node hover.
+          // For now they help engineers inspect nodes to confirm mean and percent.
+          rect.setAttribute('data-expression-scaled-mean', metrics.mean)
+          rect.setAttribute('data-expression-percent', percent)
+
+          styleRulesets.push(rulesets)
+        })
+
+        const style = `<style class="ideo-pathway-style">${styleRulesets.join(' ')}</style>`
+        const pathwayContainer = document.querySelector('#_ideogramPathwayContainer')
+
+        if (unassayedGenes.length > 0) {
+          // This might help to eventually convey in hover text, etc.
+          console.debug(`Genes omitted due to dot plot restrictions, or not assayed in study: ${unassayedGenes.join(', ')}`)
+        }
+
+        document.querySelector('.ideo-pathway-style')?.remove()
+        pathwayContainer.insertAdjacentHTML('afterbegin', style)
+      }
+
+      /** Get unique genes in pathway diagram, ranked by global interest */
+      function getPathwayGenes() {
+        const ranks = window.Ideogram.geneCache.interestingNames
+        const dataNodes = Array.from(document.querySelectorAll('#_ideogramPathwayContainer g.DataNode'))
+        const geneNodes = []
+        for (let i = 0; i < dataNodes.length; i++) {
+          const dataNode = dataNodes[i]
+          const classes = dataNode.classList
+
+          for (let j = 0; j < classes.length; j++) {
+            const cls = classes[j]
+            const isGene = ['geneproduct', 'rna', 'protein'].includes(cls.toLowerCase())
+            if (isGene) {
+              geneNodes.push(dataNode)
+              break
+            }
+          }
+        }
+
+        const genes = geneNodes.map(
+          node => {return { domId: node.id, name: node.querySelector('text').textContent }}
+        )
+
+        const rankedGenes = genes
+          .filter(gene => ranks.includes(gene.name))
+          .sort((a, b) => ranks.indexOf(a.name) - ranks.indexOf(b.name))
+
+        return rankedGenes
+      }
+
+      function initPathway() {
+        const urlParams = getURLParams()
+        const pathwayId = urlParams.pathway
+
+        const genes = urlParams.genes
+
+        document.querySelector('#onboarding').remove()
+
+        console.log('ok')
+        Ideogram.drawPathway(pathwayId, '#pathway-diagram')
+      }
+
+      console.log('Ideogram', Ideogram)
+      initPathway()
     </script>
   </body>
 </html>
