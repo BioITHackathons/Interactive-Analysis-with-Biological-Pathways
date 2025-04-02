@@ -3,11 +3,12 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ideogram@1.51.0/dist/js/ideogram.min.js"></script>
   </head>
   <body>
+    <div id="onboarding">
+      This prototype typically uses "pathway" and "genes" URL parameters.  Below is a default pathway!
+      <br/><br/><br/>
+    </div>
     <div id="_ideogramOuterWrap"></div>
     <div id="pathway-diagram"></div>
-    <div id="onboarding">
-      This prototype typically uses a "pathway" URL parameter.  Below is a default pathway!
-    </div>
     <script>
       function getURLParams() {
           let params = {};
@@ -140,7 +141,7 @@
         } else {
           document.querySelector('#onboarding').remove()
           if (urlParams.genes) {
-            const genes = urlParams.genes.split(';').map(geneName => {
+            urlParams.genes.split(';').map(geneName => {
               genesObj[geneName] = {}
             })
           }
@@ -150,11 +151,8 @@
           colorPathwayGenesByMetric(genesObj)
         })
 
-        document.addEventListener('ideogramDrawPathway', () => {
-          colorPathwayGenesByMetric({'RLBP1': {foo: 1, bar: 2}})
-        })
-
-        Ideogram.drawPathway(pathwayId, '#pathway-diagram')
+        const dimensions = {height: 700, width: 900}
+        Ideogram.drawPathway(pathwayId, '#pathway-diagram', dimensions)
       }
 
       console.log('Ideogram', Ideogram)
