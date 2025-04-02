@@ -6,7 +6,7 @@
     <div id="_ideogramOuterWrap"></div>
     <div id="pathway-diagram"></div>
     <div id="onboarding">
-      This prototype needs a "pathway" URL parameter.  Don't have one?  <a href="?pathway=WP5533">Click to load a default</a>!
+      This prototype typically uses a "pathway" URL parameter.  Below is one of our default pathway!
     </div>
     <script>
       function getURLParams() {
@@ -121,13 +121,16 @@
 
       function initPathway() {
         const urlParams = getURLParams()
-        const pathwayId = urlParams.pathway
+        let pathwayId = urlParams.pathway
+
+        if (!pathwayId) {
+          pathwayId = 'WP5533'
+        } else {
+          document.querySelector('#onboarding').remove()
+        }
 
         const genes = urlParams.genes
 
-        document.querySelector('#onboarding').remove()
-
-        console.log('ok')
         Ideogram.drawPathway(pathwayId, '#pathway-diagram')
       }
 
