@@ -13,7 +13,7 @@ How can we leverage existing data to understand and treat disease?
 - Access data where it lives - possibly different “places” -  and analyze collaboratively where it’s most efficient - possibly two different clouds (AWS and GCP).
 
 # Workflow 
-![General Workflow](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/blob/main/img/biological-pathways-workflow.jpg)
+![General Workflow](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/blob/main/img/biological-pathways-workflow.png)
 
 
 # Use case: Macular Degeneration 
