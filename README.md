@@ -1,7 +1,7 @@
 # Interactive-Analysis-with-Biological-Pathways
 The Autopath project explores how to surface biological pathways for two diseases, as a way to make it easier to draw insight from the raw data. Our two case studies are Age-related Macular Degeneration and Systemic Lupus Erythematosus (SLE), a chronic autoimmune disease where the immune system mistakenly attacks healthy tissues and organs, leading to inflammation and damage. 
 
-## Project Objectives - What's the problem?   
+## Project Objectives        
 How can we leverage existing data to understand and treat disease? 
 
 ## Challenges 
