@@ -94,4 +94,3 @@ INCLUDE tthings we wanted to do but couldn’t
 - [Olaitan I. Awe](https://github.com/laitanawe): Independent Bioinformatics Consultant.
 - Peter Fan: Northeastern University Library
 - Allie Cliffe: The Broad Institute
-
