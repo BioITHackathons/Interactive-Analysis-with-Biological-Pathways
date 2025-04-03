@@ -17,7 +17,7 @@ How can we leverage existing data to understand and treat disease?
 
 ## Workflow diagram
 
-![General Workflow](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/blob/main/img/biological_pathways_workflow.jpg)
+![General Workflow](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/blob/main/img/biological-pathways-workflow.png))
 
 # Use case #1: Macular Degeneration 
 INSERT GENERAL DESCRIPTION OF THIS USE CASE AND WHY IT’S IMPORTANT TO ENABLE THE FUNCTIONALITY FROM THE HACKATHON. 
