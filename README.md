@@ -10,14 +10,14 @@ How can we leverage existing data to understand and treat disease?
 - There's **too much data**, sometimes stored in different locations and on different cloud infrastructure, and it's **too hard to find and combine the right data** for analysis.
 - Analysis **tools require too much comp bio wrangling** and are **not user-friendly (for biologists)**.    
 
-## The Solution
+## Solution
 - Create a reproducible workflow to transform single cell expression data from different sources into a visualization of gene pathway enrichment
 - Access data where it lives - possibly different “places” - and combine for the most robust dataset     
 - Analyze collaboratively in a Terra workspace using reproducible tools where it’s most efficient - possibly two different clouds (AWS and GCP).
 
 ## Workflow diagram
+<img width="945" alt="Screenshot 2025-04-04 at 8 54 05 AM" src="https://github.com/user-attachments/assets/3c3b26e1-e2a7-4f37-8b23-5952f866d412" />
 
-![General Workflow](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/blob/main/img/biological-pathways-workflow.png))
 
 # Use case #1: Macular Degeneration 
 INSERT GENERAL DESCRIPTION OF THIS USE CASE AND WHY IT’S IMPORTANT TO ENABLE THE FUNCTIONALITY FROM THE HACKATHON. 
