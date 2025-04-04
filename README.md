@@ -130,14 +130,14 @@ INCLUDE ANALYSIS/TOOL DESCRIPTION AND LINK HERE
 
 ## Sticking points 
 
-INCLUDE tthings we wanted to do but couldn’t
+INCLUDE things we wanted to do but couldn’t
 
 ## Further iterations
 
 
 #  Team Members
 - [Eric Weitz](https://github.com/eweitz): The Broad Institute
-- Anne  Deslattes Mays: Founder, Scitechcon LLC
+- [Anne  Deslattes Mays](https://github.com/adeslatt): Science and Technology Consulting, LLC
 - Lei Ma: Harvard FAS Informatics Group
 - [Olaitan I. Awe](https://github.com/laitanawe): Independent Bioinformatics Consultant.
 - Peter Fan: Northeastern University Library
