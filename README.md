@@ -22,21 +22,21 @@ How can we leverage existing data to understand and treat disease?
 # Use case #1: Macular Degeneration 
 Age-related macular degeneration (AMD) affects 12% of Americans over 40 [1] and is a leading cause of blindness.  Better knowledge of the biomolecular causes of AMD would improve treatment, and improve American healthspans.  GTEx, an NIH CFDE project, has unique, rich, and systematic data on gene expression in human eyes [2, 3].  Data is publicly accessible on AnVIL.  Exporting this data to the Terra biomedical cloud analysis platform, conducting reproducible differential expression analysis on it, and exploring the resulting data in biological pathway diagrams will improve understanding of this complex disease's biochemical causes and effects, and stimulate the efficient development of better diagnostics and medical treatments for AMD.
 
-[1] https://pmc.ncbi.nlm.nih.gov/articles/PMC9634594/
-[2] https://explore.anvilproject.org/datasets/e5aee011-bdb3-4caa-954c-a46678656270
-[3] https://pmc.ncbi.nlm.nih.gov/articles/PMC6441365/ 
+[1] https://pmc.ncbi.nlm.nih.gov/articles/PMC9634594/      
+[2] https://explore.anvilproject.org/datasets/e5aee011-bdb3-4caa-954c-a46678656270     
+[3] https://pmc.ncbi.nlm.nih.gov/articles/PMC6441365/       
 
 
 ## Data overview
 INCLUDE DATA DESCRIPTION 
 
 ### HRCA: snRNA-seq of the human retina - all cells     
-- Access from [https://singlecell.broadinstitute.org/single_cell/study/SCP2805/hrca-snrna-seq-of-the-human-retina-all-cells#study-summary](Single Cell Portal) 
+- Access from Single Cell Portal at https://singlecell.broadinstitute.org/single_cell/study/SCP2805/hrca-snrna-seq-of-the-human-retina-all-cells#study-summary. 
 - INCLUDE overview of how to access and where to put the data
 
 ### GTEx public data         
--  Access from  [https://explore.anvilproject.org/datasets/e5aee011-bdb3-4caa-954c-a46678656270](GTEx public data in the AnVIL Data Explorer). Note that you must be signed in with your Terra user ID to export data from the Data Explorer.     
-- For step-by-step instructions on how to access and download data from the Data Explorer to a Terra workspace, see the support doc [https://support.terra.bio/hc/en-us/articles/34607573660827-Part-3-Export-AnVIL-data-to-Terra-for-analysis](Export AnVIL data for analysis). 
+-  Access GTEx public data in the AnVIL Data Explorer at https://explore.anvilproject.org/datasets/e5aee011-bdb3-4caa-954c-a46678656270. Note that you must be signed in with your Terra user ID to export data from the Data Explorer.     
+- For step-by-step instructions on how to access and download data from the Data Explorer to a Terra workspace, see the support doc on how to export AnVIL data for analysis at https://support.terra.bio/hc/en-us/articles/34607573660827-Part-3-Export-AnVIL-data-to-Terra-for-analysis. 
     
 
 # Workflow overview (the analysis tools)
