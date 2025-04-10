@@ -26,7 +26,7 @@ INSERT GENERAL DESCRIPTION OF THIS USE CASE AND WHY IT’S IMPORTANT TO ENABLE T
 INCLUDE DATA DESCRIPTION 
 
 ### HRCA: snRNA-seq of the human retina - all cells     
-- Access from [https://github.com/omicscodeathon/Interactive-Analysis-with-Biological-Pathways/](Single Cell Portal)   
+- Access from [https://singlecell.broadinstitute.org/single_cell/study/SCP2805/hrca-snrna-seq-of-the-human-retina-all-cells#study-summary](Single Cell Portal) 
 - INCLUDE overview of how to access and where to put the data
 
 ### GTEx public data         
