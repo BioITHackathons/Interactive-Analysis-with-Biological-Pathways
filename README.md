@@ -26,12 +26,12 @@ INSERT GENERAL DESCRIPTION OF THIS USE CASE AND WHY IT’S IMPORTANT TO ENABLE T
 INCLUDE DATA DESCRIPTION 
 
 ### HRCA: snRNA-seq of the human retina - all cells     
-- Access from  [https://singlecell.broadinstitute.org/single_cell/study/SCP2805/hrca-snrna-seq-of-the-human-retina-all-cells#study-summary](Single Cell Portal)   
+- Access from [[https://github.com/omicscodeathon/Interactive-Analysis-with-Biological-Pathways/](Single Cell Portal)   
 - INCLUDE overview of how to access and where to put the data
 
 ### GTEx public data         
 -  Access from  [https://explore.anvilproject.org/datasets/e5aee011-bdb3-4caa-954c-a46678656270](GTEx public data in the AnVIL Data Explorer). Note that you must be signed in with your Terra user ID to export data from the Data Explorer.     
-- For step-by-step instructions on how to access and download data from the Data Explorer to a Terra workspace, see [https://support.terra.bio/hc/en-us/articles/34607573660827-Part-3-Export-AnVIL-data-to-Terra-for-analysis](Export AnVIL data for analysis). 
+- For step-by-step instructions on how to access and download data from the Data Explorer to a Terra workspace, see the support doc [https://support.terra.bio/hc/en-us/articles/34607573660827-Part-3-Export-AnVIL-data-to-Terra-for-analysis](Export AnVIL data for analysis). 
     
 
 # Workflow overview (the analysis tools)
