@@ -20,7 +20,12 @@ How can we leverage existing data to understand and treat disease?
 
 
 # Use case #1: Macular Degeneration 
-INSERT GENERAL DESCRIPTION OF THIS USE CASE AND WHY IT’S IMPORTANT TO ENABLE THE FUNCTIONALITY FROM THE HACKATHON. 
+Age-related macular degeneration (AMD) affects 12% of Americans over 40 [1] and is a leading cause of blindness.  Better knowledge of the biomolecular causes of AMD would improve treatment, and improve American healthspans.  GTEx, an NIH CFDE project, has unique, rich, and systematic data on gene expression in human eyes [2, 3].  Data is publicly accessible on AnVIL.  Exporting this data to the Terra biomedical cloud analysis platform, conducting reproducible differential expression analysis on it, and exploring the resulting data in biological pathway diagrams will improve understanding of this complex disease's biochemical causes and effects, and stimulate the efficient development of better diagnostics and medical treatments for AMD.
+
+[1] https://pmc.ncbi.nlm.nih.gov/articles/PMC9634594/
+[2] https://explore.anvilproject.org/datasets/e5aee011-bdb3-4caa-954c-a46678656270
+[3] https://pmc.ncbi.nlm.nih.gov/articles/PMC6441365/ 
+
 
 ## Data overview
 INCLUDE DATA DESCRIPTION 
