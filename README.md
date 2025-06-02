@@ -28,15 +28,13 @@ Age-related macular degeneration (AMD) affects 12% of Americans over 40 [1] and 
 
 
 ## Data overview
-INCLUDE DATA DESCRIPTION 
 
 ### HRCA: snRNA-seq of the human retina - all cells     
 - Access from Single Cell Portal at https://singlecell.broadinstitute.org/single_cell/study/SCP2805/hrca-snrna-seq-of-the-human-retina-all-cells#study-summary. 
-- INCLUDE overview of how to access and where to put the data
 
 ### GTEx public data         
 -  Access GTEx public data in the AnVIL Data Explorer at https://explore.anvilproject.org/datasets/e5aee011-bdb3-4caa-954c-a46678656270. Note that you must be signed in with your Terra user ID to export data from the Data Explorer.     
-- For step-by-step instructions on how to access and download data from the Data Explorer to a Terra workspace, see the support doc on how to export AnVIL data for analysis at https://support.terra.bio/hc/en-us/articles/34607573660827-Part-3-Export-AnVIL-data-to-Terra-for-analysis. 
+- For step-by-step instructions on how to access and download data from the Data Explorer to a Terra workspace, see the support doc on how to export AnVIL data for analysis at [https://support.terra.bio/hc/en-us/articles/34607573660827](Part-3-Export-AnVIL-data-to-Terra-for-analysis). 
     
 
 # Workflow overview (the analysis tools)
@@ -78,13 +76,21 @@ Verify Docker installation and status using:
 INCLUDE brief analysis tool description and link here
 
 ### 2.2. CFDE Knowledge Center
-INCLUDE brief analysis tool description and link here
+INCLUDE brief analysis tool description and link here      
+
+## 3. Differential Gene Expression (RStudio in Terra)
 
 ### 3.1. Gene Set Enrichment Analysis (GSEA) 
-INCLUDE brief analysis tool description and link here
+We created  the [gene-set-enrichment-analysis.ipynb](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/blob/main/docs/notebooks/gene-set-enrichment-analysis.ipynb) Jupyter notebook to perform pathway enrichment analysis. 
 
-## 3. Differential Gene Expression (RStudio on Terra)
-INCLUDE brief analysis tool description and link here. 
+The notebook takes a list of genes produced by an upstream analysis as input and uses the [gseapy](https://gseapy.readthedocs.io/en/latest/introduction.html) python library’s enrichr tool to perform pathway enrichment analysis to identify cell pathways that are statistically overrepresented in the input gene set. The enrichr tool was run with the WikiPathways_2024_Human gene set and produces a table containing the highest-scoring cell pathways, for that particular gene set, sorted in descending order. 
+
+Finally, these pathways, along with their associated genes and any scores/values associated with each gene, are used to generate URLs that point to a downstream cell pathway visualization tool. 
+
+An example run of this notebook and a table of example links to to the cell pathway visualization tool can be found at the following link in our Terra workspace:
+
+(app.terra.bio/#workspaces/single-cell-portal-development/bio-it-hackathon-2025/analysis/launch/gene-set-enrichment-analysis.ipynb)
+
 
 ## 4. Render interactive biological pathways diagram
 INCLUDE brief analysis tool description and link here.
@@ -92,41 +98,7 @@ INCLUDE brief analysis tool description and link here.
 # Reproducible Terra workspace 
 LINK TO WORKSPACE AND ADD DESCRIPTION HERE
 
-# Use case: Lupus 
 
-## Data overview
-INCLUDE DATA DESCRIPTION 
-- 
-- 
-
-## Analysis overview
-
-### 1. Filter raw data to identify marker and binary genes    
-**NS Forest batch on AWS**       
-INCLUDE TOOL DESCRIPTION AND LINK HERE
-
-- **Docker**:
-Make sure Docker is installed and actively running in the background.
-Verify Docker installation and status using:
-  ```bash
-  docker --version
-  ```
-
-### 2. Enrich filtered data 
-
-**Enricher + CFDE Knowledge Center** 
-
-### 3. Downstream analysis    
-
-#### 3.1. Gene Set Enrichment Analysis (GSEA) 
-INCLUDE ANALYSIS/TOOL DESCRIPTION AND LINK HERE
-
-#### 3.2 Differential Gene Expression (RStudio on Terra)
-INCLUDE ANALYSIS/TOOL DESCRIPTION AND LINK HERE
-
-### 4. Results and insight    
-**Render interactive biological pathways diagram**       
-INCLUDE ANALYSIS/TOOL DESCRIPTION AND LINK HERE
 
 ## Usage Guidelines
 [https://github.com/omicscodeathon/Interactive-Analysis-with-Biological-Pathways/](https://github.com/BioITHackathons/Interactive-Analysis-with-Biological-Pathways/)
